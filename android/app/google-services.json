@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800870637972",
+    "project_id": "messging-app-e7940",
+    "storage_bucket": "messging-app-e7940.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800870637972:android:cb20fde6a2950532b26f81",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyUKGMQHDEG1xelB-wK5XFpRhkg7MKF5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
