@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:myapp/auth/auth_gate.dart';
+import 'package:myapp/services/auth/auth_gate.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
