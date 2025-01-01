@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/auth/auth_service.dart';
 import 'package:myapp/components/my_button.dart';
@@ -33,7 +31,6 @@ class LoginPage extends StatelessWidget {
                 title: Text(e.toString()),
               ));
     }
-    print("log in button has pressed");
   }
 
   @override

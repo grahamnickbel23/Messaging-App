@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class AuthService {
   // Instance of FirebaseAuth
@@ -21,9 +20,21 @@ class AuthService {
   }
 
   // sign up
+  Future<UserCredential> registerWithEmailPassword(
+      String email, password) async {
+    try {
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(email: email, password: password);
+
+      return userCredential;
+    } on FirebaseAuthException catch (e) {
+      throw Exception(e.code);
+    }
+  }
 
   // sign out
-
+  Future<void> signOut() async {
+    return await _auth.signOut();
+  }
   // Error
-  
 }
