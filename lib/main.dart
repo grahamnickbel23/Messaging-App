@@ -3,7 +3,6 @@ import 'package:myapp/auth/auth_gate.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
-import 'package:myapp/auth/login_Or_register.dart';
 import './themes/light_mode.dart';
 
 void main() async{
