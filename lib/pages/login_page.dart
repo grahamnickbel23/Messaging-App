@@ -1,20 +1,39 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:myapp/auth/auth_service.dart';
 import 'package:myapp/components/my_button.dart';
 import 'package:myapp/components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
-
   // text controllers
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-   // tap to go to login page
+  // tap to go to login page
   final Function()? onTap;
 
   LoginPage({super.key, required this.onTap});
+  
   // login function
-  void logIn(){
+  void logIn(BuildContext context) async {
+    // Auth service
+    final authService = AuthService();
 
+    // try logg in
+    try {
+      await authService.signInWithEmailPassword(
+          emailController.text, passwordController.text);
+    }
+    // catch any error
+    catch (e) {
+      showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+                title: Text(e.toString()),
+              ));
+    }
+    print("log in button has pressed");
   }
 
   @override
@@ -59,22 +78,17 @@ class LoginPage extends StatelessWidget {
 
             // Login
             const SizedBox(height: 20),
-            MyButton(
-              onTap:logIn,
-              heading: 'Log in'
-            ),
+            MyButton(onTap: () => logIn(context), heading: 'Log in'),
 
             // Register or sign in
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'Not a Member ?'
-                ),
+                const Text('Not a Member ?'),
                 const SizedBox(width: 4),
                 GestureDetector(
-                  onTap:onTap,
+                  onTap: onTap,
                   child: const Text(
                     'Register Now',
                     style: TextStyle(
