@@ -23,7 +23,7 @@ class ChatServices {
 
  // Get user stream
   Stream<List<Map<String, dynamic>>> getUsersStream() {
-    return _firestore.collection('users').snapshots().map((snapshot) {
+    return _firestore.collection('User').snapshots().map((snapshot) {
       return snapshot.docs.map((doc) {
         // Extract data for each user
         final user = doc.data();

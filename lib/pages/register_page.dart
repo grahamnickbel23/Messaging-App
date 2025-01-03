@@ -25,7 +25,8 @@ class RegisterPage extends StatelessWidget {
       try{
         _auth.registerWithEmailPassword(
         emailController.text, 
-        passwordController.text
+        passwordController.text,
+        usernameController.text
       );
       } catch (e){
         showDialog(

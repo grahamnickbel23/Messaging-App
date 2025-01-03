@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
           style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
         ),
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: _buildUserList(),
     );
   }
@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
   Widget _buildUserListItem(Map<String, dynamic> userData, BuildContext context) {
     // Display all users except the current user
     return UserTile(
-      text: userData["email"], // Correct property
+      text: userData["email"],
       onTap: () {
         Navigator.push(
           context,

@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
   final Function()? onTap;
 
   LoginPage({super.key, required this.onTap});
-  
+
   // login function
   void logIn(BuildContext context) async {
     // Auth service
@@ -20,8 +20,8 @@ class LoginPage extends StatelessWidget {
 
     // try logg in
     try {
-      await authService.signInWithEmailPassword(
-          emailController.text, passwordController.text);
+      await authService.signInWithEmailPassword(emailController.text,
+          passwordController.text,);
     }
     // catch any error
     catch (e) {
