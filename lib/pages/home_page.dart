@@ -6,7 +6,7 @@ import 'package:myapp/services/auth/auth_service.dart';
 import 'package:myapp/services/chat/chat_services.dart';
 
 class HomePage extends StatelessWidget {
-   HomePage({super.key}); // Added const
+  HomePage({super.key}); // Added const
 
   // Chat and auth service
   final ChatServices _chatServices = ChatServices();
@@ -59,20 +59,27 @@ class HomePage extends StatelessWidget {
   }
 
   // Build individual list tile for user
-  Widget _buildUserListItem(Map<String, dynamic> userData, BuildContext context) {
+  Widget _buildUserListItem(
+      Map<String, dynamic> userData, BuildContext context) {
     // Display all users except the current user
-    return UserTile(
-      text: userData["email"],
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ChatPage(
-              receiverEmail: userData["email"],
+    if (userData["email"] != authService.getCurrentUser()!.email) {
+      return UserTile(
+        text: userData["email"],
+        onTap: () {
+          print("Email: ${userData['email']}, UID: ${userData['uid']}");
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChatPage(
+                receiverEmail: userData["email"],
+                //receiverID: userData["uid"],
+              ),
             ),
-          ),
-        );
-      },
-    );
+          );
+        },
+      );
+    } else {
+      return Container();
+    }
   }
 }
