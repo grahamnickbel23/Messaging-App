@@ -63,6 +63,7 @@ class LoginPage extends StatelessWidget {
               hintText: 'Email',
               obscureText: false,
               controller: emailController,
+              focusNode: FocusNode(),
             ),
 
             // Password
@@ -71,6 +72,7 @@ class LoginPage extends StatelessWidget {
               hintText: 'Password',
               obscureText: true,
               controller: passwordController,
+              focusNode: FocusNode(),
             ),
 
             // Login

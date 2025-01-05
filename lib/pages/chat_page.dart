@@ -113,6 +113,7 @@ class _ChatPageState extends State<ChatPage> {
         //return list view
         return ListView(
           controller: _scrollController,
+          reverse: true, // Reverse the ListView
           children:
               snapshot.data!.docs.map((doc) => _buildMessageItem(doc)).toList(),
         );

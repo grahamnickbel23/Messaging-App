@@ -28,12 +28,14 @@ class ChatServices {
       return snapshot.docs.map((doc) {
         // Extract data for each user
         final user = doc.data();
-        // some temporary changes here to make the app running
         return {
           'uid': user['uid'] ?? 'Unknown UID', // Handle missing or null data
-          'email': user['email']
+          'email': user['email'],
+          'userName': user['userName'] ?? 'Unknown User'
         }; // Return the user as a Map<String, dynamic>
-      }).toList(); // Convert to a list of maps
+      }).where((user) => user['userName'] != 'Unknown User').toList(); 
+       // Filter out users without valid usernames
+      // Convert to a list of maps
     });
   }
   //get user stream

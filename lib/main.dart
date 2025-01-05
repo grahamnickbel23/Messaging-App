@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 import 'package:flutter/material.dart';
-import './themes/light_mode.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();

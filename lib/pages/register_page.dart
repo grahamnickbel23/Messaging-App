@@ -77,6 +77,7 @@ class RegisterPage extends StatelessWidget {
               hintText: 'username',
               obscureText: false,
               controller: usernameController,
+              focusNode: FocusNode(),
             ),
 
             //Email
@@ -85,6 +86,7 @@ class RegisterPage extends StatelessWidget {
               hintText: 'Email',
               obscureText: false,
               controller: emailController,
+              focusNode: FocusNode(),
             ),
 
             // Password
@@ -93,6 +95,7 @@ class RegisterPage extends StatelessWidget {
               hintText: 'Password',
               obscureText: true,
               controller: passwordController,
+              focusNode: FocusNode(),
             ),
 
             // confirm Password
@@ -101,6 +104,7 @@ class RegisterPage extends StatelessWidget {
               hintText: 'Confirm Password',
               obscureText: true,
               controller: confirmPasswordController,
+              focusNode: FocusNode(),
             ),
 
             // Register User
